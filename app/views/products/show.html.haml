@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @product.title
+%p
+  %b Description:
+  = @product.description
+%p
+  %b Status:
+  = @product.status
+%p
+  %b Multiple variant:
+  = @product.multiple_variant
+%p
+  %b Sale price:
+  = @product.sale_price
+%p
+  %b Origin price:
+  = @product.origin_price
+
+= link_to 'Edit', edit_product_path(@product)
+\|
+= link_to 'Back', products_path
