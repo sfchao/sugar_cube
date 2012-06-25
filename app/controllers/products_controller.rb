@@ -25,7 +25,6 @@ class ProductsController < ApplicationController
   # GET /products/new.json
   def new
     @product = Product.new
-    @collections = Collection.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,17 +35,12 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
     @product = Product.find(params[:id])
-    @collections = Collection.all
   end
 
   # POST /products
   # POST /products.json
   def create
-    puts ">>> #{params.inspect}"
-    collections = params[:product].delete(:collections)
     @product = Product.new(params[:product])
-    collections.each {|id| ProductCollection.create(:product => @product, :collection_id => id )}
-    
 
     respond_to do |format|
       if @product.save

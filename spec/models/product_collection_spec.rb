@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 describe ProductCollection do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject {mock_model(ProductCollection)}
+  it { should belong_to(:product)}
+  it { should belong_to(:collection)}
 end

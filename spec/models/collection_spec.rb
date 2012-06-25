@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 describe Collection do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject {mock_model(Collection)}
+
+  it { should have_many(:product).through(:production_collections)}
 end

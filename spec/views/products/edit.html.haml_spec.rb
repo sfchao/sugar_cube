@@ -19,7 +19,7 @@ describe "products/edit" do
     assert_select "form", :action => products_path(@product), :method => "post" do
       assert_select "input#product_title", :name => "product[title]"
       assert_select "textarea#product_description", :name => "product[description]"
-      assert_select "input#product_status", :name => "product[status]"
+      assert_select "select#product_status", :name => "product[status]"
       assert_select "input#product_multiple_variant", :name => "product[multiple_variant]"
       assert_select "input#product_sale_price", :name => "product[sale_price]"
       assert_select "input#product_origin_price", :name => "product[origin_price]"

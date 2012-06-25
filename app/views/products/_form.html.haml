@@ -28,9 +28,10 @@
     = f.text_field :origin_price
   .field
     = f.label :collections
-    -@collections.each do |c|
-      = check_box_tag("product[collections][]", c.id) 
-      =c.title
+    = hidden_field_tag "product[collection_ids][]", nil
+    -Collection.all.each do |c|
+      = check_box_tag("product[collection_ids][]", c.id, @product.collection_ids.include?(c.id), id:dom_id(c)) 
+      = label_tag(dom_id(c), c.title)
 
   .actions
     = f.submit 'Save'

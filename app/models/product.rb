@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  attr_accessible :title, :description, :status, :multiple_variant, :sale_price, :origin_price
+  attr_accessible :title, :description, :status, :multiple_variant, :sale_price, :origin_price,:collection_ids
 
   has_many :product_collections
   has_many :collections, :through => :product_collections
