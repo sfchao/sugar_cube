@@ -31,6 +31,7 @@ group :development, :test do
   gem 'haml-rails'
   gem 'hpricot'
   gem 'ruby_parser'
+  gem 'capistrano', '~> 2.12.0'
   #gem 'web-app-theme', '~> 0.8.0'
 end
 
