@@ -1,4 +1,4 @@
-TheLoveBaby::Application.routes.draw do
+SugarCube::Application.routes.draw do
   resources :collections
 
   resources :products
