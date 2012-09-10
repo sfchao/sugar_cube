@@ -1,10 +1,12 @@
 SugarCube::Application.routes.draw do
-  resources :collections
-
-  resources :products
-
   get "home/index"
   root :to => "home#index"
+
+  namespace :admin do
+    resources :products
+  end
+
+  resources :collections
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
