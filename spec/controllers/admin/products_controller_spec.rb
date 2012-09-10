@@ -18,7 +18,7 @@ require 'spec_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
-describe ProductsController do
+describe Admin::ProductsController do
 
   # This should return the minimal set of attributes required to create a valid
   # Product. As you add validations to Product, be sure to
@@ -81,7 +81,7 @@ describe ProductsController do
 
       it "redirects to the created product" do
         post :create, {:product => valid_attributes}, valid_session
-        response.should redirect_to(Product.last)
+        response.should redirect_to(admin_product_url(Product.last))
       end
     end
 
@@ -123,7 +123,7 @@ describe ProductsController do
       it "redirects to the product" do
         product = Product.create! valid_attributes
         put :update, {:id => product.to_param, :product => valid_attributes}, valid_session
-        response.should redirect_to(product)
+        response.should redirect_to(admin_product_url(product))
       end
     end
 
@@ -157,7 +157,7 @@ describe ProductsController do
     it "redirects to the products list" do
       product = Product.create! valid_attributes
       delete :destroy, {:id => product.to_param}, valid_session
-      response.should redirect_to(products_url)
+      response.should redirect_to(admin_products_url)
     end
   end
 
