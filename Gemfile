@@ -9,7 +9,13 @@ gem 'sqlite3'
 gem 'haml'
 gem 'devise'
 gem 'kaminari'
+gem 'jquery-rails'
+# gem 'simple_form'
+# gem 'nifty-generators'
 
+# authentication and authorization
+gem "devise"
+gem "cancan"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -22,8 +28,6 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
-
-#gem 'jquery-rails'
  
 group :development, :test do
   gem 'capybara'
@@ -33,11 +37,20 @@ group :development, :test do
   gem 'ruby_parser'
   gem 'capistrano', '~> 2.12.0'
   #gem 'web-app-theme', '~> 0.8.0'
+  gem 'ruby-debug19', :require => 'ruby-debug'
+  gem "factory_girl_rails"
 end
 
 group :test do
   gem 'shoulda-matchers'
   gem "factory_girl"
+end
+
+group :development do
+  gem "rails3-generators", '~> 0.17.6'
+  gem "hpricot"
+  gem "ruby_parser"
+  gem 'vmc'
 end
 
 # To use ActiveModel has_secure_password
@@ -48,9 +61,3 @@ end
 
 # Use unicorn as the web server
 # gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
