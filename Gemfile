@@ -5,7 +5,6 @@ gem 'rails', '3.2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 #gem 'web-app-theme', '~> 0.8.0'
-gem 'pg'
 gem 'haml'
 gem 'devise'
 gem 'kaminari'
@@ -39,6 +38,7 @@ group :development, :test do
   #gem 'web-app-theme', '~> 0.8.0'
   gem 'ruby-debug19', :require => 'ruby-debug'
   gem "factory_girl_rails"
+  gem 'sqlite3'
 end
 
 group :test do
@@ -51,6 +51,10 @@ group :development do
   gem "hpricot"
   gem "ruby_parser"
   gem 'vmc'
+end
+
+group :production do
+  gem 'pg'
 end
 
 # To use ActiveModel has_secure_password
